@@ -30,7 +30,7 @@ function displayData(price, title, images) {
     let productContainer = document.createElement('div');
     productContainer.setAttribute('class', "productContainer")
     productContainer.innerHTML = `
-    <img src=${images} alt=${title} height="100px">
+    <img src=${images} alt=${title} height="50px">
     <p>${title}</p>
     <p>${price}</p>
     `;

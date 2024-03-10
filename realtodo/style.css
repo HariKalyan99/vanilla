@@ -3,6 +3,11 @@
 }
 
 
+body {
+    background: rgb(125,103,237);
+background: linear-gradient(90deg, rgba(125,103,237,1) 27%, rgba(69,226,252,1) 100%);
+}
+
 .todoContainer {
     display: flex;
     justify-content: center;
@@ -16,6 +21,8 @@
     width: 300px;
     height: 30px;
     padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
 
@@ -35,11 +42,84 @@ li {
 .listStyle {
     display: flex;
     margin: 10px;
-    width: 500px;
+    width: 1000px;
     justify-content: space-between;
+    border: 1px solid rgb(255, 254, 254);
+    padding: 10px;
+    background: rgb(69,226,252);
+background: linear-gradient(90deg, rgba(69,226,252,1) 0%, rgba(125,103,237,1) 58%);
 }
 
 
 .display {
     display: none;
+}
+
+
+ul::after {
+    content: attr(data-check);
+    position: absolute;
+    top: 0px;
+    left: 110px;
+}
+
+#checkBtn {
+    position: relative;
+    top: -90px;
+    width: 100px;
+}
+
+#checkBtn:hover {
+    background-color: rgb(69,226,252,1);
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+}
+
+.listStyle button {
+    background-color:rgb(69,226,252,1);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+}
+
+.listStyle button:hover {
+    background-color:rgb(125,103,237);
+}
+
+.strikeIt {
+    text-decoration: line-through;
+}
+
+#formBtn {
+    width: 100px;
+    height: 43px;
+    background-color:rgb(69,226,252,1);
+    border: none;
+    border-radius: 8px;
+}
+
+
+#formBtn:hover {
+    background-color:rgb(125,103,237);
+    cursor: pointer;
+}
+
+#clearBtn {
+    position: absolute; top: 0; width: 100px; height: 30px; background-color: rgb(69,226,252,1); border: none;
+}
+
+
+#clearBtn:hover {
+    background-color: rgb(125,103,237);
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1099px) {
+    .listStyle {
+     width: 600px;
+     font-size: 0.5rem;
+    }
 }

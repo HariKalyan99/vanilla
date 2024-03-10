@@ -37,17 +37,20 @@ function displayTodoContainer() {
   if (list) {
     list.map((todo, ind) => {
       inner += `
-        <div class="todoList" id="list${todo.id}">
-            <ul class="listStyle">
-                <li>${todo.input}</li>
-                <li>${todo.date}</li>
+        <div class="todoList" >
+            <ul class="listStyle" data-check="Mark checked if completed!">
+                <li id="${todo.id}" class=""><h1>${todo.input}</h1></li>
+                <li><h1>${todo.date}</h1></li>
                 <button type="button" onClick="editTodo(${todo.id}, ${ind})">EDIT</button>
                 <button type="button" onClick="deleteTodo(${todo.id}, ${ind})">DELETE</button>
-            </ul>
+                </ul>
+                <div onClick="strike(${todo.id})" id="checkBtn"><i class="fa-solid fa-clipboard-check fa-xl" ></i></div>
         </div>
         `;
     });
   }
+  
+
   inputEle.value = "";
   dateEle.value = "";
   listContainer.innerHTML = inner;
@@ -77,3 +80,10 @@ function deleteTodo(id, ind) {
     localSave(list);
 }
   
+
+
+
+function strike(id) {
+    let ele = document.getElementById(id)
+    ele.classList.toggle('strikeIt')
+}
